@@ -1,0 +1,4 @@
+".source.js":
+  "Console log skeleton":
+    prefix: "cl"
+    body: "console.log('${1}: ', $1)"
