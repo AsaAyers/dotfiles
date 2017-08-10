@@ -1,4 +1,8 @@
 ".source.js":
+  "Await Delay":
+    prefix: 'delay'
+    body: "await new Promise(r => setTimeout(r, ${1:100}))"
+
   "Console log skeleton":
     prefix: "cl"
     body: "console.log('${1}: ', $1)"
