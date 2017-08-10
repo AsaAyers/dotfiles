@@ -9,8 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# exec xrandr --dpi 220
 exec_always /home/asa/bin/layout.sh
+exec_always --no-startup-id numlockx on
 
 set $mod Mod4
 
@@ -206,7 +206,6 @@ exec --no-startup-id  /usr/lib/policykit-1-gnome/polkit-gnome-authentication-age
 
 # exec /home/asa/bin/layout.sh
 exec google-chrome
-exec xbindkeys
 exec /usr/bin/slack
 # Activate screensaver in the top left
 # Disable screensaver with bottom left
@@ -237,3 +236,5 @@ bindsym Control+mod1+l exec xautolock -locknow
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window bindsym $mod+minus scratchpad show
+bindsym $mod+minus scratchpad show
+for_window [window_role="pop-up"] floating enable

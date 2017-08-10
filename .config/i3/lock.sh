@@ -1,24 +1,14 @@
-#!/bin/sh -e
+#!/bin/bash
 
-# Take a screenshot
-scrot ~/.config/i3/screen_locked.png
-# Blur the screenshot
+lock_image=/tmp/screen_locked.png
+if [ "$HOSTNAME" == "asa-macbookpro" ]; then
+  lock_image=/tmp/screen_locked.png
+fi
 
-convert ~/.config/i3/screen_locked.png \
-  -blur 0x6 \
-  -fill red \
-  -font Ubuntu \
-  -gravity center \
-  -pointsize 96 \
-  -annotate 0 "Screen Locked" \
-  /tmp/screen_locked.png
-
-
-
-rm ~/.config/i3/screen_locked.png
-
+echo "lock.sh: $lock_image"
+time ~/.config/i3/screenshot.sh $lock_image
+# Synchronize cached writes to persistent storage
+sync
 
 # Lock screen displaying this image.
-# date "+%s LOCK" >> ~/personal_events.log
-i3lock --nofork --ignore-empty-password --image=/tmp/screen_locked.png --dpms --show-failed-attempts
-# date "+%s UNLOCK" >> ~/personal_events.log
+i3lock --nofork --ignore-empty-password --image=$lock_image --show-failed-attempts
