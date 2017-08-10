@@ -122,6 +122,18 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
+
+# This has been adapted from undistract-me.sh because it expects to be installed in /usr/share
+if [ -z "$BASH_VERSION" -o -z "$PS1" -o -n "$last_command_started_cache" ]; then
+  # If bash is not interactive or undistract-me has already been sourced, do nothing.
+  true
+else
+  source /home/asa/undistract-me/long-running.bash
+  notify_when_long_running_commands_finish_install
+fi
+
+
+
 PATH="$PATH:./node_modules/.bin"
 
 export EDITOR=vim
