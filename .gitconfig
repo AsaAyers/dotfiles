@@ -1,5 +1,14 @@
+[include]
+	path = ~/.gitconfig_local
 [user]
 	name = Asa Ayers
-	email = Asa@AsaAyers.com
 [push]
-	default = matching
+	default = upstream
+[alias]
+	pfo = pull
+	pr = !pr.sh
+	gpsu = push --set-upstream origin
+[rerere]
+	enabled = true
+[rebase]
+	autosquash = true
