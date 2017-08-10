@@ -61,6 +61,13 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
+
+# I don't need my hostname in my terminal
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u:\w\$ '
+fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -121,6 +128,7 @@ fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
 
 # This has been adapted from undistract-me.sh because it expects to be installed in /usr/share
@@ -133,8 +141,13 @@ else
 fi
 
 
-
-PATH="$PATH:./node_modules/.bin"
-
+export PATH="$PATH:./node_modules/.bin"
 export EDITOR=vim
-alias config='/usr/bin/git --git-dir=/home/asa/.cfg/ --work-tree=/home/asa'
+export VISUAL="$EDITOR"
+
+alias gcob="git checkout -b"
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+if [ -e "$HOME/.bashrc.$HOSTNAME" ]; then
+  source "$HOME/.bashrc.$HOSTNAME"
+fi
