@@ -221,6 +221,7 @@ exec --no-startup-id blueman-applet
 # https://askubuntu.com/questions/33774/how-do-i-remap-the-caps-lock-and-ctrl-keys
 exec --no-startup-id setxkbmap -option caps:ctrl_modifier
 # exec --no-startup-id setxkbmap -option caps:ctrl_modifier -option ctrl:lctrl_meta
+exec --no-startup-id syndaemon -t -R -d
 
 
 # exec compton -f
