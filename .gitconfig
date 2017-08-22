@@ -5,7 +5,7 @@
 [push]
 	default = upstream
 [alias]
-	pfo = pull
+	pfo = pull --ff-only
 	pr = !pr.sh
 	gpsu = push --set-upstream origin
 [rerere]
