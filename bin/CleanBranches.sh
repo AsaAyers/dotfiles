@@ -65,7 +65,7 @@ git checkout $DEFAULT_BRANCH
 git pull --ff-only $UPSTREAM_REMOTE $DEFAULT_BRANCH
 set +e
 if [ "$UPSTREAM_REMOTE" != "origin" ]; then
-  git push origin $DEFAULT_BRANCH
+  git push origin $DEFAULT_BRANCH --no-verify
 fi
 
 # Remove local origin/BRANCH references to branches that have already been cleaned up

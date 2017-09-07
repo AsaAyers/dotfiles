@@ -12,3 +12,6 @@
 	enabled = true
 [rebase]
 	autosquash = true
+[CleanBranches]
+	prefix = asa
+	removebranches = true
