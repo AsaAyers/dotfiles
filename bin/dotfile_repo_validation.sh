@@ -19,8 +19,18 @@ done
 
 if ! which hub; then
   echo "Missing hub command"
+  echo "https://github.com/github/hub/releases"
+fi
+
+if ! which ubuntu-make.umake &>/dev/null; then
+  echo "missing ubuntu-make"
+  echo "snap install --classic ubuntu-make"
 fi
 
 
+if ! which cdiff &>/dev/null; then
+  echo "missing color-diff"
+  echo "sudo apt install color-diff"
+fi
 
 

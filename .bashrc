@@ -148,6 +148,10 @@ export VISUAL="$EDITOR"
 alias gcob="git checkout -b"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+if [ -e "$HOME/.bashrc.local" ]; then
+  source "$HOME/.bashrc.local"
+fi
 if [ -e "$HOME/.bashrc.$HOSTNAME" ]; then
   source "$HOME/.bashrc.$HOSTNAME"
 fi
+
