@@ -147,7 +147,7 @@ assign [class="Wow-64.exe"] $workspace9
 assign [class="Slack"] $workspace3
 assign [class="Atom"] $workspace2
 
-# exec_always feh --bg-max /home/asa/Pictures/wallpaper.png
+exec_always feh --bg-max /home/asa/Pictures/wallpaper.jpg
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
