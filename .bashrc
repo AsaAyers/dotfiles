@@ -136,7 +136,7 @@ if [ -z "$BASH_VERSION" -o -z "$PS1" -o -n "$last_command_started_cache" ]; then
   # If bash is not interactive or undistract-me has already been sourced, do nothing.
   true
 else
-  source /home/asa/undistract-me/long-running.bash
+  source $HOME/undistract-me/long-running.bash
   notify_when_long_running_commands_finish_install
 fi
 
