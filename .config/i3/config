@@ -205,7 +205,8 @@ exec --no-startup-id  /usr/lib/policykit-1-gnome/polkit-gnome-authentication-age
 
 
 # exec /home/asa/bin/layout.sh
-exec google-chrome
+# exec google-chrome
+exec firefox
 exec /usr/bin/slack
 # Activate screensaver in the top left
 # Disable screensaver with bottom left
