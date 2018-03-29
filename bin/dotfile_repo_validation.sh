@@ -17,6 +17,21 @@ for COMMAND in ${I3COMMANDS[@]}; do
   fi
 done
 
+if ! which firefox &>/dev/null; then
+  echo "missing ubuntu-make"
+  echo "snap install firefox"
+fi
+
+if ! which atom &>/dev/null; then
+  echo "missing ubuntu-make"
+  echo "snap install --classic atom"
+fi
+
+if ! which slack &>/dev/null; then
+  echo "missing ubuntu-make"
+  echo "snap install --classic slack"
+fi
+
 if ! which hub; then
   echo "Missing hub command"
   echo "https://github.com/github/hub/releases"
