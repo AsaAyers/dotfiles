@@ -11,3 +11,5 @@ set expandtab       " Expand TABs to spaces
 
 " https://stackoverflow.com/a/21026618
 :set directory=$HOME/.vim/swapfiles//
+
+:set hlsearch
