@@ -103,8 +103,8 @@ set $workspace5 "5"
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
-set $workspace9 "9: WoW"
-set $workspace10 "10: TSM"
+set $workspace9 "9: Factorio"
+set $workspace10 "10: Discord"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -144,6 +144,8 @@ for_window [title="^Android Emulator"] floating enable
 
 assign [class="TSMApplication"] $workspace10
 assign [class="Wow-64.exe"] $workspace9
+assign [class="factorio"] $workspace9
+assign [class="discord"] $workspace10
 assign [class="Slack"] $workspace3
 assign [class="Atom"] $workspace2
 
