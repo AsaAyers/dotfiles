@@ -1,12 +1,12 @@
 [submodule ".nvm"]
 	path = .nvm
-	url = //github.com/creationix/nvm.git
+	url = git://github.com/creationix/nvm.git
 [submodule ".scm_breeze"]
 	path = .scm_breeze
 	url = git://github.com/ndbroadbent/scm_breeze.git
 [submodule "undistract-me"]
 	path = undistract-me
-	url = git@github.com:jml/undistract-me.git
+	url = git://github.com/jml/undistract-me.git
 [submodule ".config/i3/i3lock-multimonitor"]
 	path = .config/i3/i3lock-multimonitor
 	url = https://github.com/shikherverma/i3lock-multimonitor.git
