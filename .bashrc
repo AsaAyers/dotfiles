@@ -155,3 +155,10 @@ if [ -e "$HOME/.bashrc.$HOSTNAME" ]; then
   source "$HOME/.bashrc.$HOSTNAME"
 fi
 
+# Yubikey Setup
+# https://gist.github.com/bramswenson/1395921df04ece4c8d7c5643a76968c3
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# gpgconf --launch gpg-agent
+gpg-connect-agent updatestartuptty /bye
+
