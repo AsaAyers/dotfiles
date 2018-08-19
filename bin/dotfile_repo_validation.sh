@@ -32,7 +32,7 @@ if ! which slack &>/dev/null; then
   echo "snap install --classic slack"
 fi
 
-if ! which hub; then
+if ! which hub &>/dev/null; then
   echo "Missing hub command"
   echo "https://github.com/github/hub/releases"
 fi
@@ -44,8 +44,8 @@ fi
 
 
 if ! which cdiff &>/dev/null; then
-  echo "missing color-diff"
-  echo "sudo apt install color-diff"
+  echo "missing colordiff"
+  echo "sudo apt install colordiff"
 fi
 
 
