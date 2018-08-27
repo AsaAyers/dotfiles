@@ -26,3 +26,26 @@ config submodule update --init --recursive
 
 config remote set-url origin git@github.com:AsaAyers/dotfiles.git
 
+sudo apt install -y \
+  blueman \
+  colordiff \
+  feh \
+  i3 \
+  i3lock-fancy \
+  gnome-tweaks \
+  numlockx \
+  snapd \
+  vim \
+  xautolock \
+  xserver-xorg-input-synaptics
+
+# https://github.com/drduh/YubiKey-Guide#21-install---linux
+sudo apt install -y \
+    gnupg2 gnupg-agent pinentry-curses scdaemon pcscd yubikey-personalization libusb-1.0-0-dev
+
+
+sudo snap install --classic atom
+sudo snap install --classic slack
+sudo snap install --classic ubuntu-make
+
+apm install js-hyperclick atom-ide-ui react vim-mode-plus ex-mode
