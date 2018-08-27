@@ -2,7 +2,7 @@
 
 # Activate screensaver in the top left
 # Disable screensaver with bottom left
-exec xautolock -time 10 \
+exec xautolock -time 15 \
   -noclose \
   -detectsleep \
   -locker "/home/asa/.config/i3/lock.sh" \
