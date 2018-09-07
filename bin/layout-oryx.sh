@@ -22,26 +22,32 @@ fi
 
 if [ "$SCREENS" = "$HOME_4K" ]; then
   xrandr \
-    --output $MOBILE --mode 3840x2160 --pos 6000x1680 --rotate normal \
+    --output $MOBILE --mode 1920x1080 --pos 6000x2760 --rotate normal \
     --output HDMI-0 --off \
     --output DP-3 --off \
     --output $VERTICAL --mode 3840x2160 --pos 3840x0 --rotate right \
     --output DP-1 --off \
-    --output $LEFT --mode 3840x2160 --pos 0x1680 --rotate normal
+    --output $LEFT --mode 3840x2160 --pos 0x1680 --rotate normal --primary
 fi
 
+if [ "$SCREENS" = "$LEFT $MOBILE" ]; then
+  xrandr \
+    --output $MOBILE --mode 1920x1080 --pos 3840x1080 --rotate normal \
+    --output HDMI-0 --off \
+    --output DP-3 --off \
+    --output $VERTICAL --off \
+    --output DP-1 --off \
+    --output $LEFT --mode 3840x2160 --pos 0x1680 --rotate normal --primary
+fi
 
 if [ "$SCREENS" = "$MOBILE" ]; then
   xrandr \
-    --output $MOBILE --mode 3840x2160 --pos 6000x1680 --rotate normal \
+    --output $MOBILE --mode 1920x1080 --pos 0x0 --rotate normal --primary \
     --output HDMI-0 --off \
     --output DP-3 --off \
     --output $VERTICAL --off \
     --output DP-1 --off \
     --output $LEFT --off
 fi
-
-echo "screens: $SCREENS"
-echo "mobile: $MOVILE"
 
 
