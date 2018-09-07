@@ -30,9 +30,10 @@ sudo apt install -y \
   blueman \
   colordiff \
   feh \
+  gnome-tweaks \
   i3 \
   i3lock-fancy \
-  gnome-tweaks \
+  meld \
   numlockx \
   snapd \
   vim \
@@ -48,4 +49,9 @@ sudo snap install --classic atom
 sudo snap install --classic slack
 sudo snap install --classic ubuntu-make
 
-apm install js-hyperclick atom-ide-ui react vim-mode-plus ex-mode
+apm install \
+  atom-ide-ui \
+  js-hyperclick \
+  linter-eslint \
+  react \
+  vim-mode-plus ex-mode

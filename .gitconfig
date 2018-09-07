@@ -15,3 +15,5 @@
 [CleanBranches]
 	prefix = asa
 	removebranches = true
+[diff]
+  tool = meld
