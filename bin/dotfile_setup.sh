@@ -33,6 +33,7 @@ sudo apt install -y \
   gnome-tweaks \
   i3 \
   i3lock-fancy \
+  libglib2.0-dev libgtk-3-dev libnotify-dev libpulse-dev libx11-dev autoconf automake pkg-config \ # pa-applet dependencies
   meld \
   numlockx \
   shutter \
@@ -51,3 +52,11 @@ sudo snap install --classic slack
 sudo snap install --classic ubuntu-make
 
 apm stars --user AsaAyers --install
+
+if ! which pa-applet >/dev/null 2>&1; then
+	cd $HOME/pa-applet
+	./autogen.sh
+	./configure
+	make
+	sudo make install
+fi

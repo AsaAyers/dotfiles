@@ -10,3 +10,6 @@
 [submodule ".config/i3/i3lock-multimonitor"]
 	path = .config/i3/i3lock-multimonitor
 	url = https://github.com/shikherverma/i3lock-multimonitor.git
+[submodule "pa-applet"]
+	path = pa-applet
+	url = ./pa-applet
