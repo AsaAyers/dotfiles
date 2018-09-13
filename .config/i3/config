@@ -68,18 +68,18 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+bar split h
+bindsym $mod+ctrl+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+ctrl+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+ctrl+s layout stacking
+bindsym $mod+ctrl+t layout tabbed
+bindsym $mod+ctrl+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -103,8 +103,8 @@ set $workspace5 "5"
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
-set $workspace9 "9: Factorio"
-set $workspace10 "10: Discord"
+set $workspace9 "9: Zoom"
+set $workspace10 "10: Zoom Presenter"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -142,8 +142,7 @@ for_window [class="TSMApplication"] floating enable
 for_window [class="Wow-64.exe"] focus
 for_window [title="^Android Emulator"] floating enable
 
-assign [class="TSMApplication"] $workspace10
-assign [class="Wow-64.exe"] $workspace9
+assign [class="zoom"] $workspace9
 assign [class="factorio"] $workspace9
 assign [class="discord"] $workspace10
 assign [class="Slack"] $workspace3

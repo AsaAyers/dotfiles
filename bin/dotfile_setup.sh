@@ -34,6 +34,7 @@ sudo apt install -y \
   i3 \
   i3lock-fancy \
   libglib2.0-dev libgtk-3-dev libnotify-dev libpulse-dev libx11-dev autoconf automake pkg-config \ # pa-applet dependencies
+  meld \
   numlockx \
   snapd \
   vim \
@@ -49,7 +50,12 @@ sudo snap install --classic atom
 sudo snap install --classic slack
 sudo snap install --classic ubuntu-make
 
-apm install js-hyperclick atom-ide-ui react vim-mode-plus ex-mode
+apm install \
+  atom-ide-ui \
+  js-hyperclick \
+  linter-eslint \
+  react \
+  vim-mode-plus ex-mode
 
 if ! which pa-applet >/dev/null 2>&1; then
 	cd $HOME/pa-applet
