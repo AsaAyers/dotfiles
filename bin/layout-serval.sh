@@ -27,8 +27,8 @@ if [ "$SCREENS" = "$AT_HOME" ]; then
 		--output DP-4 --off \
 		--output DP-3 --off \
 		--output DP-2 --off \
-		--output $MOBILE --primary --mode 3840x2160 --pos 0x0 --rotate normal --scale 1x1 \
-		--output DP-1 --auto --pos 3840x0 --rotate normal --scale 1x1
+		--output $MOBILE --mode 3840x2160 --pos 0x0 --rotate normal --scale 1x1 \
+		--output DP-1 --auto --pos 3840x0 --rotate normal --scale 1x1 --primary 
 fi
 
 
@@ -37,7 +37,7 @@ if [ "$SCREENS" = "$HOME_4K" ]; then
 	xrandr \
 		--output $MOBILE --mode 3840x2160 --scale 1x1 --pos 6000x1680 \
 		--output DP-1 --auto --pos 3840x0 --rotate right --primary \
-		--output DP-3 --auto --pos 0x1680
+		--output DP-3 --auto --pos 0x1680 
 
 fi
 
