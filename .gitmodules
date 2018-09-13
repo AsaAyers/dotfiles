@@ -12,4 +12,4 @@
 	url = https://github.com/shikherverma/i3lock-multimonitor.git
 [submodule "pa-applet"]
 	path = pa-applet
-	url = ./pa-applet
+  url = https://github.com/AsaAyers/pa-applet.git
