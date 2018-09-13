@@ -35,6 +35,7 @@ sudo apt install -y \
   i3lock-fancy \
   meld \
   numlockx \
+  shutter \
   snapd \
   vim \
   xautolock \
@@ -49,9 +50,4 @@ sudo snap install --classic atom
 sudo snap install --classic slack
 sudo snap install --classic ubuntu-make
 
-apm install \
-  atom-ide-ui \
-  js-hyperclick \
-  linter-eslint \
-  react \
-  vim-mode-plus ex-mode
+apm stars --user AsaAyers --install

@@ -146,7 +146,7 @@ assign [class="zoom"] $workspace9
 assign [class="factorio"] $workspace9
 assign [class="discord"] $workspace10
 assign [class="Slack"] $workspace3
-assign [class="Atom"] $workspace2
+assign [class="Atom" window_type="normal"] $workspace2
 
 exec_always feh --bg-max /home/asa/Pictures/wallpaper.jpg
 
@@ -194,9 +194,8 @@ hide_edge_borders both
 
 
 # bindsym Print exec "shutter -s"
-bindsym Print exec "gnome-screenshot --area"
-bindsym Shift+Print exec "gnome-screenshot"
-bindsym $mod+Print exec "gnome-screenshot --interactive"
+bindsym Print exec "shutter --select"
+bindsym Shift+Print exec "shutter --full"
 # bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 # bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 # bindsym XF86AudioMute exec amixer -q set Master toggle
