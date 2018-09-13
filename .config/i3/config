@@ -44,16 +44,16 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+h focus left; exec center_mouse.sh
+bindsym $mod+j focus down; exec center_mouse.sh
+bindsym $mod+k focus up; exec center_mouse.sh
+bindsym $mod+l focus right; exec center_mouse.sh
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Left focus left; exec center_mouse.sh
+bindsym $mod+Down focus down; exec center_mouse.sh
+bindsym $mod+Up focus up; exec center_mouse.sh
+bindsym $mod+Right focus right; exec center_mouse.sh
 
 # move focused window
 bindsym $mod+Shift+h move left

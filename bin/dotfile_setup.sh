@@ -26,6 +26,7 @@ config submodule update --init --recursive
 
 config remote set-url origin git@github.com:AsaAyers/dotfiles.git
 
+# libglib2.0-dev...pkg-config are pa-applet dependencies
 sudo apt install -y \
   blueman \
   colordiff \
@@ -33,7 +34,7 @@ sudo apt install -y \
   gnome-tweaks \
   i3 \
   i3lock-fancy \
-  libglib2.0-dev libgtk-3-dev libnotify-dev libpulse-dev libx11-dev autoconf automake pkg-config \ # pa-applet dependencies
+  libglib2.0-dev libgtk-3-dev libnotify-dev libpulse-dev libx11-dev autoconf automake pkg-config 
   meld \
   numlockx \
   shutter \
