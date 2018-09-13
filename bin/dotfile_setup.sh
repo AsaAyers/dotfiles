@@ -30,9 +30,10 @@ sudo apt install -y \
   blueman \
   colordiff \
   feh \
+  gnome-tweaks \
   i3 \
   i3lock-fancy \
-  gnome-tweaks \
+  libglib2.0-dev libgtk-3-dev libnotify-dev libpulse-dev libx11-dev autoconf automake pkg-config \ # pa-applet dependencies
   numlockx \
   snapd \
   vim \
@@ -49,3 +50,11 @@ sudo snap install --classic slack
 sudo snap install --classic ubuntu-make
 
 apm install js-hyperclick atom-ide-ui react vim-mode-plus ex-mode
+
+if ! which pa-applet >/dev/null 2>&1; then
+	cd $HOME/pa-applet
+	./autogen.sh
+	./configure
+	make
+	sudo make install
+fi
