@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd $HOME/.config/i3
-lock_image=~/Pictures/wallpaper.jpg
+lock_image=./wallpaper
 
 # Synchronize cached writes to persistent storage
 sync
