@@ -51,3 +51,12 @@ if [ "$SCREENS" = "$MOBILE" ]; then
 fi
 
 
+if [ "$SCREENS" = "4k" ]; then
+  xrandr \
+    --output $MOBILE --mode 3840x2160 --pos 0x0 --rotate normal --primary \
+    --output HDMI-0 --off \
+    --output DP-3 --off \
+    --output $VERTICAL --off \
+    --output DP-1 --off \
+    --output $LEFT --off
+fi
