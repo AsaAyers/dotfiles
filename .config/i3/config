@@ -132,8 +132,12 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 workspace_layout tabbed
+workspace $workspace3 output DP-0
+workspace $workspace2 output DP-2
+workspace $workspace9 output DP-2
 
 # use xprop to find the class
+for_window [class="Peek"] floating enable
 for_window [class="Update-manager"] floating enable
 for_window [class="Gnome-control-center.real"] floating enable
 for_window [class="Shutter" title="DrawingTool$"] floating enable
@@ -141,6 +145,8 @@ for_window [class="Shutter" title="Shutter$"] floating enable
 for_window [class="TSMApplication"] floating enable
 for_window [class="Wow-64.exe"] focus
 for_window [title="^Android Emulator"] floating enable
+
+for_window [class="zoom"] layout splitv
 
 assign [class="zoom"] $workspace9
 assign [class="factorio"] $workspace9
@@ -231,7 +237,7 @@ exec --no-startup-id setxkbmap -option caps:ctrl_modifier
 exec --no-startup-id syndaemon -t -R -d
 
 
-# exec compton -f
+exec compton -f
 
 
 bindsym $mod+x move workspace to output right
