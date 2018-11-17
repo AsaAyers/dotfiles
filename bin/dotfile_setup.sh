@@ -34,7 +34,7 @@ sudo apt install -y \
   gnome-tweaks \
   i3 \
   i3lock-fancy \
-  libglib2.0-dev libgtk-3-dev libnotify-dev libpulse-dev libx11-dev autoconf automake pkg-config 
+  libglib2.0-dev libgtk-3-dev libnotify-dev libpulse-dev libx11-dev autoconf automake pkg-config \
   meld \
   numlockx \
   shutter \

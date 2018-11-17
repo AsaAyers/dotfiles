@@ -9,6 +9,12 @@ fi
 
 echo "SCREENS: $SCREENS"
 
+if upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E state | grep discharging -q; then
+  system76-power profile battery
+else
+  system76-power profile performance
+fi
+
 MOBILE="DP-0"
 AT_HOME="$MOBILE DP-1"
 HOME_4K="$MOBILE DP-1 DP-3"
