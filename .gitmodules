@@ -13,3 +13,6 @@
 [submodule "pa-applet"]
 	path = pa-applet
   url = https://github.com/AsaAyers/pa-applet.git
+[submodule "polybar"]
+	path = polybar
+	url = https://github.com/jaagr/polybar

@@ -26,14 +26,19 @@ config submodule update --init --recursive
 
 config remote set-url origin git@github.com:AsaAyers/dotfiles.git
 
+# xcb... is for polybar 
 # libglib2.0-dev...pkg-config are pa-applet dependencies
 sudo apt install -y \
   blueman \
+  cmake \
   colordiff \
   feh \
   gnome-tweaks \
   i3 \
+  xcb-proto python-xcbgen libxcb-image0-dev libxcb-image0  libxcb-ewmh-dev libxcb-icccm4-dev \
+  libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev \
   i3lock-fancy \
+  jq \
   libglib2.0-dev libgtk-3-dev libnotify-dev libpulse-dev libx11-dev autoconf automake pkg-config \
   meld \
   numlockx \
@@ -48,16 +53,34 @@ sudo apt install -y \
     gnupg2 gnupg-agent pinentry-curses scdaemon pcscd yubikey-personalization libusb-1.0-0-dev
 
 
-sudo snap install --classic atom
-sudo snap install --classic slack
-sudo snap install --classic ubuntu-make
 
-apm stars --user AsaAyers --install
+which atom >/dev/null 2>&1 || sudo snap install --classic atom
+which slack >/dev/null 2>&1 || sudo snap install --classic slack
+which ubuntu-make.umake >/dev/null 2>&1 || sudo snap install --classic ubuntu-make
+
+
+apm stars --user AsaAyers --json | jq '.[].name' > /tmp/stars.$$
+apm ls --json | jq '.user[].name' > /tmp/installed.$$
+
+NUM_INSTALLED=$(cat /tmp/stars.$$ /tmp/installed.$$ | sort | uniq -d | wc -l)
+NUM_STARRED=$(cat /tmp/stars.$$ | wc -l)
+
+if [ $NUM_INSTALLED -lt $NUM_STARRED ]; then 
+	apm stars --user AsaAyers --install
+fi
+
 
 if ! which pa-applet >/dev/null 2>&1; then
 	cd $HOME/pa-applet
 	./autogen.sh
 	./configure
 	make
+	sudo make install
+fi
+
+if ! which polybar >/dev/null 2>&1; then
+	mkdir ~/polybar/build
+	cd ~/polybar/build
+	cmake ..
 	sudo make install
 fi
