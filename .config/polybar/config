@@ -58,12 +58,12 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = i3
-modules-center = 
-modules-right = filesystem pulseaudio memory cpu battery temperature date powermenu
+modules-center =
+modules-right = filesystem pulseaudio memory cpu battery temperature date
 
 tray-position = right
 tray-padding = 2
-;tray-transparent = true
+; tray-transparent = true
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -263,11 +263,11 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
+date = " %a %b %e "
+; date-alt = " %Y-%m-%d"
 
-time = %H:%M
-time-alt = %H:%M:%S
+time = "%l:%M %p"
+; time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
@@ -389,9 +389,9 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+label-open = POWER
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-close = cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
