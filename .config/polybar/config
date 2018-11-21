@@ -58,7 +58,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = i3
-modules-center = 
+modules-center = timetracking
 modules-right = filesystem pulseaudio memory cpu battery temperature date powermenu
 
 tray-position = right
@@ -79,6 +79,11 @@ scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/timetracking]
+type = custom/script
+exec = ~/bin/i3-monitor.sh --tail
+tail = true
 
 [module/xwindow]
 type = internal/xwindow

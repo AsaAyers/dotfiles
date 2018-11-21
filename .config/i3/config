@@ -9,6 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+exec_always /home/asa/bin/i3-monitor.sh --monitor
 exec_always /home/asa/bin/layout.sh
 exec_always --no-startup-id numlockx on
 
