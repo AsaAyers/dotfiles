@@ -4,17 +4,18 @@ const createDebug = require('debug')
 const debug = createDebug('i3-monitor')
 const debugLine = createDebug('i3-monitor:line')
 
-
 const filename = '/home/asa/personal_events.log'
+const reset = '%{F-}'
+const red = '%{F#f00}'
 
 program
   .version('0.1.0')
   .option('-p, --monitor', `Monitor and write to ${filename}`)
   .option('-t, --tail', 'tail')
+  .option('-d, --debug', `do not write to ${filename}`)
   .parse(process.argv);
 
 function reportUsage() {
-  const red = '%{F#f00}'
 
   let lines = []
   try {
@@ -120,7 +121,6 @@ function reportUsage() {
     return key + ' ' + toTime(data[key].total)
   })
 
-  const reset = '%{F-}'
   if (report.length === 0) {
     report.push(`${red}Nothing found`)
   } else {
@@ -134,18 +134,21 @@ function reportUsage() {
 
 if (program.monitor) {
   const i3 = require('i3').createClient();
-  i3.on('window', function({ container }) {
-    const { class: windowClass, title } = container.window_properties
-    const line = `${Math.floor(Date.now() / 1000)} ${windowClass} : ${title}`
+  i3.on('window', function(event) {
+    debug(event)
+    if (event.change === 'title' || event.change === 'focus') {
+      const { class: windowClass, title } = event.container.window_properties
+      const line = `${Math.floor(Date.now() / 1000)} ${windowClass} : ${title}`
 
-    console.log(line);
-    fs.appendFile(filename, line + '\n', (err) => {
-      if (err) throw err;
-    })
+      console.log(line);
+      if (!program.debug) {
+        fs.appendFile(filename, line + '\n', (err) => {
+          if (err) throw err;
+        })
+      }
+    }
   })
-} 
-
-if (program.tail) {
+} else if (program.tail) {
   reportUsage()
   setInterval(reportUsage, 10 * 1000)
 } else {
