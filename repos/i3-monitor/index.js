@@ -4,6 +4,7 @@ const createDebug = require('debug')
 const debug = createDebug('i3-monitor')
 const debugLine = createDebug('i3-monitor:line')
 
+const MIN_TIME = 10
 const filename = '/home/asa/personal_events.log'
 const reset = '%{F-}'
 const red = '%{F#f00}'
@@ -25,7 +26,7 @@ function reportUsage() {
     if (e.code === 'ENOENT') {
       console.log('~/personal_events.log not found')
       process.exit(1)
-    } 
+    }
     throw e
   }
   lines.push(
@@ -34,7 +35,7 @@ function reportUsage() {
 
   var today = new Date();
   today.setHours(0,0,0,0);
-  let last = { 
+  let last = {
     ts : Math.round(today.getTime() / 1000),
     className: 'MIDNIGHT',
     title: 'none',
@@ -50,7 +51,11 @@ function reportUsage() {
       const title = line.substr(b + 1).trim()
       if (last.ts > 0) {
         const time = ts - last.ts
-        debugLine(ts, line)
+        debugLine(time, line)
+        if (time < MIN_TIME) {
+          return memo
+        }
+
         debug(last.className, '+', time, last.beforeLock)
 
 
@@ -91,7 +96,7 @@ function reportUsage() {
 
   delete data.MIDNIGHT
 
-  const sortedKeys = Object.keys(data).sort((a, b) => 
+  const sortedKeys = Object.keys(data).sort((a, b) =>
     data[b].total - data[a].total
   ).filter(key => (
     data[key].total > 60
@@ -107,9 +112,8 @@ function reportUsage() {
     minutes = minutes % 60
 
     minutes = String(minutes)
-    hours = String(hours)
     if (hours > 0) {
-      return `${hours.padStart(2, '0')}:${minutes.padStart(2, '0')}`
+      return `${hours}:${minutes.padStart(2, '0')}`
     } else {
       return `${minutes.padStart(2, '0')}`
     }
@@ -134,11 +138,14 @@ function reportUsage() {
 
 if (program.monitor) {
   const i3 = require('i3').createClient();
+  let last = 0
   i3.on('window', function(event) {
     debug(event)
     if (event.change === 'title' || event.change === 'focus') {
+      const ts = Math.floor(Date.now() / 1000)
+
       const { class: windowClass, title } = event.container.window_properties
-      const line = `${Math.floor(Date.now() / 1000)} ${windowClass} : ${title}`
+      const line = `${ts} ${windowClass} : ${title}`
 
       console.log(line);
       if (!program.debug) {
