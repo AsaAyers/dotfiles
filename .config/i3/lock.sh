@@ -7,6 +7,7 @@ lock_image=./wallpaper
 sync
 
 printf '{"ts": %s, "className": "%s","title": ""}\n' $(date "+%s") "LOCK" >> ~/personal_events.log
+printf '{"ts": %s, "className": "%s","title": ""}\n' $(date "+%s") "LOCK" >> ~/focus-tracker.log
 # date "+%s LOCK : none" >> ~/personal_events.log
 if which i3lock-fancy >/dev/null; then
   i3lock-fancy --pixelate
@@ -15,4 +16,5 @@ else
   ./i3lock-multimonitor/lock -i $lock_image -a "--nofork --pointer=default --ignore-empty-password --show-failed-attempts"
 fi
 printf '{"ts": %s, "className": "%s","title": ""}\n' $(date "+%s") "UNLOCK" >> ~/personal_events.log
+printf '{"ts": %s, "className": "%s","title": ""}\n' $(date "+%s") "UNLOCK" >> ~/focus-tracker.log
 # date "+%s UNLOCK : none" >> ~/personal_events.log

@@ -150,6 +150,7 @@ for_window [title="^Android Emulator"] floating enable
 
 for_window [class="zoom"] layout splitv
 
+assign [title="Focus Tracker"] $workspace9
 assign [class="zoom"] $workspace9
 assign [class="factorio"] $workspace9
 assign [class="discord"] $workspace10
