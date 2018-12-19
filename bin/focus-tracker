@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd /home/asa/repos/focus-tracker/
+
+npm run build
+npm run electron
+
+
