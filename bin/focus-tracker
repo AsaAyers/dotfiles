@@ -2,7 +2,13 @@
 
 cd /home/asa/repos/focus-tracker/
 
-npm run build
-npm run electron
+if [ -r ~/.nvm/nvm.sh ]; then
+  unset npm_config_prefix
+  . ~/.nvm/nvm.sh
+fi
+
+
+npm run build 2>&1 | tee /tmp/focus-tracker.log
+npm run electron 2>&1 | tee /tmp/focus-tracker.log
 
 
