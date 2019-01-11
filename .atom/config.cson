@@ -1,0 +1,89 @@
+"*":
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
+  "atom-package-deps":
+    ignored: [
+      "linter-eslint"
+      "prettier-atom"
+    ]
+  core:
+    disabledPackages: [
+      "angularjs"
+      "ide-typescript"
+      "rustfmt"
+    ]
+    telemetryConsent: "limited"
+  editor:
+    fontSize: 16
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "5cf3747f-863e-46ae-a821-2bc9160b0939"
+  "gist-it":
+    newGistsDefaultToPrivate: true
+  "ide-flowtype":
+    tryFlowBin: true
+  "js-hyperclick":
+    jumpToImport: false
+    skipIntermediate: true
+    trustedFiles: [
+      {
+        hash: "e5f2b288469a9311244ae440f50471109824b014"
+        trusted: true
+      }
+      {
+        hash: "782ca717dd4bf328b17f971fa8904482175587b6"
+        trusted: true
+      }
+      {
+        hash: "74ea81d601d262c336d8549781499b5c199d8537"
+        trusted: true
+      }
+      {
+        hash: "f32a402e91eebfa608b3ed2b823124ec1d1059b5"
+        trusted: true
+      }
+      {
+        hash: "11aea9576c69ee5c88455f8915bc699236e09d00"
+        trusted: true
+      }
+      {
+        hash: "0e4808feb3ede80462b45bbe34b65d47c578cd01"
+        trusted: true
+      }
+    ]
+    usePendingPanes: true
+  "linter-eslint":
+    autofix:
+      fixOnSave: true
+    scopes: [
+      "source.js"
+      "source.jsx"
+      "source.js.jsx"
+      "source.babel"
+      "source.js-semantic"
+      "source.flow"
+    ]
+  "linter-tslint":
+    fixOnSave: true
+  minimap:
+    plugins:
+      bookmarks: true
+      bookmarksDecorationsZIndex: 0
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+      selection: true
+      selectionDecorationsZIndex: 0
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      isDisabledIfNotInPackageJson: true
+  "spell-check":
+    addKnownWords: true
+    knownWords: [
+      "Asa"
+    ]
+  welcome:
+    showOnStartup: false
