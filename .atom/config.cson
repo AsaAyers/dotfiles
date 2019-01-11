@@ -6,12 +6,12 @@
     ignored: [
       "linter-eslint"
       "prettier-atom"
+      "linter-csslint"
     ]
   core:
     disabledPackages: [
-      "angularjs"
-      "ide-typescript"
-      "rustfmt"
+      "react"
+      "language-babel"
     ]
     telemetryConsent: "limited"
   editor:
@@ -23,6 +23,7 @@
     userId: "5cf3747f-863e-46ae-a821-2bc9160b0939"
   "gist-it":
     newGistsDefaultToPrivate: true
+    openAfterCreate: true
   "ide-flowtype":
     tryFlowBin: true
   "js-hyperclick":
@@ -54,10 +55,16 @@
         trusted: true
       }
     ]
+    extensions: [
+      ".js"
+      ".json"
+      ".node"
+      ".jsx"
+    ]
     usePendingPanes: true
   "linter-eslint":
-    autofix:
-      fixOnSave: true
+    fixOnSave: true
+    ignoreFixableRulesWhileTyping: true
     scopes: [
       "source.js"
       "source.jsx"
@@ -66,8 +73,6 @@
       "source.js-semantic"
       "source.flow"
     ]
-  "linter-tslint":
-    fixOnSave: true
   minimap:
     plugins:
       bookmarks: true
@@ -85,5 +90,10 @@
     knownWords: [
       "Asa"
     ]
+  "toggle-quotes":
+    quoteCharacters: "\"'`"
+  "tree-view":
+    squashDirectoryNames: true
+  "vim-mode-plus": {}
   welcome:
     showOnStartup: false
