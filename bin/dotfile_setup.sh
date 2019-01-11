@@ -29,6 +29,7 @@ config remote set-url origin git@github.com:AsaAyers/dotfiles.git
 # xcb... is for polybar 
 # libglib2.0-dev...pkg-config are pa-applet dependencies
 sudo apt install -y \
+  apt-transport-https \
   blueman \
   cmake \
   colordiff \
@@ -51,6 +52,12 @@ sudo apt install -y \
 # https://github.com/drduh/YubiKey-Guide#21-install---linux
 sudo apt install -y \
     gnupg2 gnupg-agent pinentry-curses scdaemon pcscd yubikey-personalization libusb-1.0-0-dev
+
+if ! which git-secret >/dev/null 2>&1; then
+  echo "deb https://dl.bintray.com/sobolevn/deb git-secret main" | sudo tee -a /etc/apt/sources.list
+  wget -qO - https://api.bintray.com/users/sobolevn/keys/gpg/public.key | sudo apt-key add -
+  sudo apt-get update && sudo apt-get install git-secret
+fi
 
 
 
@@ -83,4 +90,8 @@ if ! which polybar >/dev/null 2>&1; then
 	cd ~/polybar/build
 	cmake ..
 	sudo make install
+fi
+
+if ! which rustc >/dev/null 2>&1; then
+	curl https://sh.rustup.rs -sSf | sh
 fi
