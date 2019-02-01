@@ -1,4 +1,5 @@
 #!/bin/bash
+#set -ex
 
 if ! which git >/dev/null ; then
   sudo apt install git
@@ -33,7 +34,9 @@ sudo apt install -y \
   blueman \
   cmake \
   colordiff \
+  compton \
   feh \
+  flameshot \
   gnome-tweaks \
   i3 \
   xcb-proto python-xcbgen libxcb-image0-dev libxcb-image0  libxcb-ewmh-dev libxcb-icccm4-dev \
@@ -43,7 +46,6 @@ sudo apt install -y \
   libglib2.0-dev libgtk-3-dev libnotify-dev libpulse-dev libx11-dev autoconf automake pkg-config \
   meld \
   numlockx \
-  shutter \
   snapd \
   vim \
   xautolock \

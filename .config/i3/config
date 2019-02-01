@@ -145,6 +145,7 @@ for_window [class="Update-manager"] floating enable
 for_window [class="Gnome-control-center.real"] floating enable
 for_window [class="Shutter" title="DrawingTool$"] floating enable
 for_window [class="Shutter" title="Shutter$"] floating enable
+for_window [class="flameshot"] floating enable
 for_window [class="TSMApplication"] floating enable
 for_window [class="Wow-64.exe"] focus
 for_window [title="^Android Emulator"] floating enable
@@ -205,7 +206,7 @@ hide_edge_borders both
 
 
 # bindsym Print exec "shutter -s"
-bindsym Print exec "shutter --select"
+bindsym Print exec "flameshot gui"
 bindsym Shift+Print exec "shutter --full"
 # bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 # bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
