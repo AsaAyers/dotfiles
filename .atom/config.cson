@@ -15,7 +15,6 @@
     ]
     telemetryConsent: "limited"
   editor:
-    fontSize: 16
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
@@ -24,9 +23,16 @@
   "gist-it":
     newGistsDefaultToPrivate: true
     openAfterCreate: true
+  "git-tabs": {}
   "ide-flowtype":
     tryFlowBin: true
   "js-hyperclick":
+    extensions: [
+      ".js"
+      ".json"
+      ".node"
+      ".jsx"
+    ]
     jumpToImport: false
     skipIntermediate: true
     trustedFiles: [
@@ -55,16 +61,11 @@
         trusted: true
       }
     ]
-    extensions: [
-      ".js"
-      ".json"
-      ".node"
-      ".jsx"
-    ]
     usePendingPanes: true
   "linter-eslint":
-    fixOnSave: true
-    ignoreFixableRulesWhileTyping: true
+    autofix:
+      fixOnSave: true
+      ignoreFixableRulesWhileTyping: true
     scopes: [
       "source.js"
       "source.jsx"

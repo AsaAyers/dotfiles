@@ -27,6 +27,10 @@ config submodule update --init --recursive
 
 config remote set-url origin git@github.com:AsaAyers/dotfiles.git
 
+sudo apt-add-repository --yes ppa:yubico/stable
+
+sudo apt update
+
 # xcb... is for polybar 
 # libglib2.0-dev...pkg-config are pa-applet dependencies
 sudo apt install -y \
@@ -49,7 +53,8 @@ sudo apt install -y \
   snapd \
   vim \
   xautolock \
-  xserver-xorg-input-synaptics
+  xserver-xorg-input-synaptics \
+  yubioath-desktop
 
 # https://github.com/drduh/YubiKey-Guide#21-install---linux
 sudo apt install -y \
