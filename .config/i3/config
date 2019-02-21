@@ -97,7 +97,7 @@ bindsym $mod+a focus parent
 
 # https://www.youtube.com/watch?v=8-S0cWnLBKg
 # https://github.com/alexbooker/dotfiles/blob/ubuntu/.i3/config
-set $workspace1 "1"
+set $workspace1 "1: Main"
 set $workspace2 "2: Editor"
 set $workspace3 "3"
 set $workspace4 "4"
@@ -136,7 +136,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 workspace_layout tabbed
 workspace $workspace3 output DP-0
 workspace $workspace2 output DP-2
-workspace $workspace9 output DP-2
+workspace $workspace9 output DP-1
 
 # use xprop to find the class
 for_window [class="Gnome-calculator"] floating enable
@@ -146,18 +146,37 @@ for_window [class="Gnome-control-center.real"] floating enable
 for_window [class="Shutter" title="DrawingTool$"] floating enable
 for_window [class="Shutter" title="Shutter$"] floating enable
 for_window [class="flameshot"] floating enable
-for_window [class="TSMApplication"] floating enable
-for_window [class="Wow-64.exe"] focus
 for_window [title="^Android Emulator"] floating enable
 
 for_window [class="zoom"] layout splitv
 
 assign [title="Focus Tracker"] $workspace8
 assign [class="zoom"] $workspace9
-assign [class="factorio"] $workspace9
-assign [class="discord"] $workspace10
-assign [class="Slack"] $workspace3
+assign [class="Slack"] $workspace1
 assign [class="Atom" window_type="normal"] $workspace2
+
+show_marks yes
+
+bindsym $mod+Shift+Mod2+KP_End   mark "KP_1"
+bindsym $mod+Shift+Mod2+KP_Down  mark "KP_2"
+bindsym $mod+Shift+Mod2+KP_Next  mark "KP_3"
+bindsym $mod+Shift+Mod2+KP_Left  mark "KP_4"
+bindsym $mod+Shift+Mod2+KP_Begin mark "KP_5"
+bindsym $mod+Shift+Mod2+KP_Right mark "KP_6"
+bindsym $mod+Shift+Mod2+KP_Home  mark "KP_7"
+bindsym $mod+Shift+Mod2+KP_Up    mark "KP_8"
+bindsym $mod+Shift+Mod2+KP_Prior mark "KP_9"
+
+bindsym $mod+Mod2+KP_1 [con_mark="KP_1"] focus
+bindsym $mod+Mod2+KP_2 [con_mark="KP_2"] focus
+bindsym $mod+Mod2+KP_3 [con_mark="KP_3"] focus
+bindsym $mod+Mod2+KP_4 [con_mark="KP_4"] focus
+bindsym $mod+Mod2+KP_5 [con_mark="KP_5"] focus
+bindsym $mod+Mod2+KP_6 [con_mark="KP_6"] focus
+bindsym $mod+Mod2+KP_7 [con_mark="KP_7"] focus
+bindsym $mod+Mod2+KP_8 [con_mark="KP_8"] focus
+bindsym $mod+Mod2+KP_9 [con_mark="KP_9"] focus
+
 
 exec_always feh --bg-max /home/asa/.config/i3/wallpaper
 
