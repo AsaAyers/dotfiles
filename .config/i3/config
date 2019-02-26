@@ -147,6 +147,7 @@ for_window [class="Shutter" title="DrawingTool$"] floating enable
 for_window [class="Shutter" title="Shutter$"] floating enable
 for_window [class="flameshot"] floating enable
 for_window [title="^Android Emulator"] floating enable
+for_window [title="Zoom Group Chat"] floating enable
 
 for_window [class="zoom"] layout splitv
 
@@ -167,15 +168,15 @@ bindsym $mod+Shift+Mod2+KP_Home  mark "KP_7"
 bindsym $mod+Shift+Mod2+KP_Up    mark "KP_8"
 bindsym $mod+Shift+Mod2+KP_Prior mark "KP_9"
 
-bindsym $mod+Mod2+KP_1 [con_mark="KP_1"] focus
-bindsym $mod+Mod2+KP_2 [con_mark="KP_2"] focus
-bindsym $mod+Mod2+KP_3 [con_mark="KP_3"] focus
-bindsym $mod+Mod2+KP_4 [con_mark="KP_4"] focus
-bindsym $mod+Mod2+KP_5 [con_mark="KP_5"] focus
-bindsym $mod+Mod2+KP_6 [con_mark="KP_6"] focus
-bindsym $mod+Mod2+KP_7 [con_mark="KP_7"] focus
-bindsym $mod+Mod2+KP_8 [con_mark="KP_8"] focus
-bindsym $mod+Mod2+KP_9 [con_mark="KP_9"] focus
+bindsym $mod+Mod2+KP_1 [con_mark="KP_1"] focus; exec center_mouse.sh
+bindsym $mod+Mod2+KP_2 [con_mark="KP_2"] focus; exec center_mouse.sh
+bindsym $mod+Mod2+KP_3 [con_mark="KP_3"] focus; exec center_mouse.sh
+bindsym $mod+Mod2+KP_4 [con_mark="KP_4"] focus; exec center_mouse.sh
+bindsym $mod+Mod2+KP_5 [con_mark="KP_5"] focus; exec center_mouse.sh
+bindsym $mod+Mod2+KP_6 [con_mark="KP_6"] focus; exec center_mouse.sh
+bindsym $mod+Mod2+KP_7 [con_mark="KP_7"] focus; exec center_mouse.sh
+bindsym $mod+Mod2+KP_8 [con_mark="KP_8"] focus; exec center_mouse.sh
+bindsym $mod+Mod2+KP_9 [con_mark="KP_9"] focus; exec center_mouse.sh
 
 
 exec_always feh --bg-max /home/asa/.config/i3/wallpaper
@@ -266,6 +267,7 @@ exec compton -f
 
 
 bindsym $mod+x move workspace to output right
+bindsym $mod+Shift+x move workspace to output left
 
 bindsym Control+mod1+l exec xautolock -locknow
 
@@ -275,5 +277,5 @@ bindsym Control+mod1+l exec xautolock -locknow
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window bindsym $mod+minus scratchpad show
-bindsym $mod+minus scratchpad show
+bindsym $mod+minus scratchpad show; exec center_mouse.sh
 for_window [window_role="pop-up"] floating enable
