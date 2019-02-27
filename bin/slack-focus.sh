@@ -9,13 +9,16 @@ do
     read line
     id=$(echo "$line" | awk -F' ' '{printf $NF}')
 
-    if xprop -id $id | grep WM_CLASS | grep Slack; then
+    if xprop -id $id | grep WM_CLASS | grep Slack ; then
       # https://github.com/i3/i3/issues/2971#issuecomment-365268904
       slack=$id
       echo "Slack: $slack"
     elif [ ! -z "$slack" ]; then
       echo "Slack lost focus"
-      i3-msg "[class=Slack id=$slack] move scratchpad"
+
+      if xprop -id $slack | grep I3_FLOATING_WINDOW; then
+        i3-msg "[class=Slack id=$slack] move scratchpad"
+      fi
       slack=
     else
       echo "other"
