@@ -134,6 +134,7 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 workspace_layout tabbed
+workspace $workspace1 output DP-1
 workspace $workspace3 output DP-0
 workspace $workspace2 output DP-2
 workspace $workspace9 output DP-1
@@ -149,10 +150,12 @@ for_window [class="flameshot"] floating enable
 for_window [title="^Android Emulator"] floating enable
 for_window [title="Zoom Group Chat"] floating enable
 
-for_window [class="zoom"] layout splitv
+for_window [class="zoom" title="Zoom"] layout splith; mark "KP_9"
+for_window [class="Slack"] mark "KP_3"
 
 assign [title="Focus Tracker"] $workspace8
 assign [class="zoom"] $workspace9
+assign [class="Firefox"] $workspace1
 assign [class="Slack"] $workspace1
 assign [class="Atom" window_type="normal"] $workspace2
 
@@ -263,7 +266,7 @@ exec --no-startup-id setxkbmap -option caps:ctrl_modifier
 exec --no-startup-id syndaemon -t -R -d
 
 
-exec compton -f
+exec_always compton -f
 
 
 bindsym $mod+x move workspace to output right
