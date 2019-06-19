@@ -10,6 +10,7 @@ printf '{"ts": %s, "className": "%s","title": ""}\n' $(date "+%s") "LOCK" >> ~/p
 # printf '{"ts": %s, "className": "%s","title": ""}\n' $(date "+%s") "LOCK" >> ~/focus-tracker.log
 # date "+%s LOCK : none" >> ~/personal_events.log
 if which i3lock-fancy >/dev/null; then
+  xset dpms force off
   i3lock-fancy --pixelate
 else
   # Lock screen displaying this image.
