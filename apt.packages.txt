@@ -1,0 +1,15 @@
+git
+vim
+flameshot
+apt-transport-https
+ca-certificates
+curl
+gnupg
+lsb-release
+docker-ce
+docker-ce-cli
+containerd.io
+regolith-desktop
+regolith-session-flashback
+regolith-look-lascaille
+regolith-look-ayu

@@ -1,0 +1,4 @@
+for_window [class="flameshot"] floating enable
+# bindsym Print exec "grimshot copy area"
+
+bindsym Print exec "flameshot gui"

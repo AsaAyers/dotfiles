@@ -1,0 +1,9 @@
+!regolith.look.path: /usr/share/regolith-look/solarized-dark
+regolith.look.path: /usr/share/regolith-look/ayu
+
+# Mod3 is unmapped, so these aren't reachable
+wm.binding.browser: Mod3+Shift+Return
+wm.binding.sleep: Mod3+s
+wm.binding.reload: Mod3+Shift+c
+wm.program.terminal:/home/asa/bin/focus-terminal.sh
+wm.binding.float_toggle: Space

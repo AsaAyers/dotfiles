@@ -1,0 +1,13 @@
+
+workspace_layout tabbed
+
+bindsym $mod+Shift+Return exec focus-vscode.sh
+bindsym $mod+Shift+z exec focus-zoom.sh
+bindsym $mod+Shift+s exec /home/asa/bin/run-or-raise.sh class "slack" slack
+bindsym $mod+Shift+f [class="firefox"] focus
+bindsym $mod+Shift+c [class="Google-chrome"] focus
+
+# Some of the config file is in:
+# /usr/share/regolith/i3/config.d
+# set_from_resource $i3-wm.program.launcher.app i3-wm.program.launcher.app rofi -show drun -theme $rofiTheme
+# bindsym $mod+d exec $i3-wm.program.launcher.app

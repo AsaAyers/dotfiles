@@ -1,0 +1,2 @@
+
+exec_always --no-startup-id ~/bin/fix-caps.sh
