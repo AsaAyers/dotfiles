@@ -13,3 +13,8 @@ regolith-desktop
 regolith-session-flashback
 regolith-look-lascaille
 regolith-look-ayu
+rofi
+tree
+libnvidia-gl-550:i386
+net-tools
+dunst

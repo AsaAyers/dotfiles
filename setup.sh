@@ -27,6 +27,8 @@ install_apt_packages() {
 }
 
 setup_repositories() {
+  sudo dpkg --add-architecture i386
+
   if [ ! -f /usr/share/keyrings/regolith-archive-keyring.gpg ]; then
     wget -qO - https://archive.regolith-desktop.com/regolith.key | \
       gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg > /dev/null
@@ -65,6 +67,21 @@ setup_repositories() {
     echo "Docker repository already configured. Skipping."
   fi
 
+}
+
+install_nvm() {
+  if ! which -s nvm; then
+    echo "Installing NVM (Node Version Manager)..."
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+    source ~/.bashrc
+    nvm install --lts
+    npm install -g npm@latest
+
+    corepack enable
+    yarn set version stable
+    yarn
+  fi
 }
 
 # Function to set up Docker repository, service, and user permissions
@@ -111,6 +128,7 @@ install_classic_snaps() {
       echo "Classic Snap package '$package' is already installed. Skipping."
     fi
   done < "$DOTFILES_DIR/snap.classic.packages.txt"
+  echo "Done installing classic snaps"
 }
 
 # Function to create symbolic links for dotfiles
@@ -124,6 +142,7 @@ symlink_dotfiles() {
 
   # Items to symlink from the dotfiles repo (relative to repo root) to $HOME
   CONFIG_SYMLINKS=(
+    "bin"
     ".config/regolith3"
     ".vimrc"
     ".bash_aliases"
@@ -162,19 +181,33 @@ save_manual_packages() {
 }
 
 install_tailscale() {
-  which tailscale || curl -fsSL https://tailscale.com/install.sh | sh
+  if !  which -s tailscale; then 
+    echo -e "Installing Tailscale..."
+    curl -fsSL https://tailscale.com/install.sh | sh
+  fi
 }
 
 # --- Main execution function ---
 main() {
+  echo -e "\n\n\n"
   setup_repositories
+  echo -e "\n\n\n"
   install_apt_packages
+  echo -e "\n\n\n"
   setup_docker
+  echo -e "\n\n\n"
   install_standard_snaps
+  echo -e "\n\n\n"
   install_classic_snaps
+  echo -e "\n\n\n"
   install_tailscale
+  echo -e "\n\n\n"
+  install_nvm
+  echo -e "\n\n\n"
   symlink_dotfiles
+  echo -e "\n\n\n"
   save_manual_packages
+  echo -e "\n\n\n"
 
   echo "Dotfiles setup complete!"
   echo "Installation finished. Please log out and log back in to finalize changes (e.g., docker group membership)."

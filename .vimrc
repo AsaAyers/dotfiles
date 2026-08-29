@@ -10,6 +10,6 @@ set softtabstop=2   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 
 " https://stackoverflow.com/a/21026618
-:set directory=$HOME/.vim/swapfiles//
+:set directory=$HOME/.vim/swapfiles/
 
 :set hlsearch
