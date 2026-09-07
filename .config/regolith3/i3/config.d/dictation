@@ -1,0 +1,9 @@
+bindsym $mod+Menu exec --no-startup-id ~/bin/whisper-dictate.sh
+show_marks no
+
+# bindsym $mod+Menu  mark "dictate"; [con_mark="dictate"] title_format "<span background='#FF0000' foreground='#FFFFFF'>🔴 %title</span>"
+# bindsym $mod+Shift+Menu [con_mark="dictate"] title_format "%title"; [con_mark="dictate"] unmark "dictate"
+
+
+for_window [all] title_window_icon on
+

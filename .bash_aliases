@@ -14,3 +14,7 @@ alias g=git
 alias dcu='docker compose up'
 alias dcd='docker compose down'
 alias dc='docker compose'
+
+dbash() {
+  docker compose exec $@ bash
+}

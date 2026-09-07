@@ -1,0 +1,3 @@
+
+# Launch stalonetray to show app indicators
+# exec --no-startup-id stalonetray --dockapp-mode simple

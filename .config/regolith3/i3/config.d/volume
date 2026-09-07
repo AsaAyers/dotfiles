@@ -1,0 +1,6 @@
+
+# Disable the volume knob
+exec --no-startup-id xmodmap -e 'keycode 122='
+exec --no-startup-id xmodmap -e 'keycode 123='
+
+

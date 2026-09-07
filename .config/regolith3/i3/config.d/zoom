@@ -1,3 +1,5 @@
 for_window [class="Zoom Workplace"] floating enable
 
+for_window [class="zoom" title="annotate_toolbar"] move scratchpad
+
 
